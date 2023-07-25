@@ -31,7 +31,7 @@ function process(rows, weeks, metric) {
         })
 
     }
-    var data = [{
+    var plotData = [{
         type: 'choropleth',
         locationmode: 'USA-states',
         locations: frames[0].data[0].locations,
@@ -106,7 +106,7 @@ function process(rows, weeks, metric) {
             }
         }]
     };
-    return { layout, frames, data }
+    return { layout, frames, plotData }
 }
 
 export default process;

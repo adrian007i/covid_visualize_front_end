@@ -25,16 +25,16 @@ function App() {
   const [plot_data, setPlotData] = useState([]);
   const [layout, setLayout] = useState(undefined);
   const [frames, setFrames] = useState(undefined); 
-  const [config, setConfig] = useState({}); 
+  const [metric, setMetric] = useState("tot_cases"); 
 
   useEffect(() => {
     if (!loading && !error) {
-      const { layout, frames, data: plotData } = process(data.cases_deaths, data.weeks, "tot_cases");
+      const { layout, frames, plotData } = process(data.cases_deaths, data.weeks, metric);
       setLayout(layout);
       setFrames(frames);
       setPlotData(plotData);
     }
-  }, [data, loading, error]);
+  }, [data, loading, error,metric]);
 
   if (loading) return (
     <div className='main'>
@@ -50,18 +50,12 @@ function App() {
       <pre className='red'>Error:{error.message}</pre>
     </div>);
  
-  function changeMetric(e){  
-    const { layout, frames, data: plotData } = process(data.cases_deaths, data.weeks, e.target.value);
-    setLayout(layout);
-    setFrames(frames);
-    setPlotData(plotData); 
-  }
  
   
   
   return (
     <div className='main'>
-      <select name="metric" id="metric" onChange={changeMetric}>
+      <select name="metric" id="metric" onChange={(e) => {setMetric(e.target.value)}}>
         <option value="tot_cases">Total Number of Active Cases</option>
         <option value="tot_deaths">Total Number of Deaths</option>
         <option value="new_cases">Number of New Cases</option>

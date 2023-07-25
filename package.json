@@ -1,6 +1,6 @@
 {
   "name": "front_end",
-  "homepage": "https://adrian007i.github.io/covid_visualizer",
+  "homepage": "https://adrian007i.github.io/covid_visualize_front_end",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

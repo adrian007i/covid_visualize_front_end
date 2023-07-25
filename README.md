@@ -1,7 +1,7 @@
 # The Front End
 
 This is a simple react app.
-Live Backend Demo: http://137.184.15.159/
+Live Front End Demo: https://covid-visualizer.onrender.com/graphq/
 
 #### Frameworks & Libraries :
 1. react
