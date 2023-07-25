@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://covid-data-backend.onrender.com/graphq/",
+  uri: "https://covid-visualizer.onrender.com/graphql/",
   cache: new InMemoryCache()
 });
 
