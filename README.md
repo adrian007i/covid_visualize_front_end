@@ -1,7 +1,7 @@
 # The Front End
 
 This is a simple react app.
-Live Front End Demo: https://covid-visualizer.onrender.com/graphq/
+Live Front End Demo: https://adrian007i.github.io/covid_visualize_front_end/
 
 #### Frameworks & Libraries :
 1. react

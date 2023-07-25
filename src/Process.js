@@ -1,3 +1,11 @@
+/**
+ * Process the data to generate a choropleth animation plot.
+ *
+ * @param {Array} rows - An array of objects containing data from the database.
+ * @param {Array} weeks - An array of distinct week start dates sorted A-Z
+ * @param {string} metric - The metric to be visualized
+ * @returns {Object} An object containing the plot layout, frames, and plot data.
+ */
 function process(rows, weeks, metric) {
 
     function filter_and_unpack(rows, key, start_date) {
@@ -7,7 +15,7 @@ function process(rows, weeks, metric) {
     var frames = []
     var slider_steps = []
 
-
+    // iterate each distinct week of dates
     for (var i = 0; i <= weeks.length - 1; i++) {
         let str_date = new Date(parseInt(weeks[i]))
         let year = str_date.getFullYear();

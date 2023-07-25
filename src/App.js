@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useQuery, gql } from "@apollo/client";
 import process from './Process';
 
+// graphQL query
 const COVID_QUERY = gql`
 {
   cases_deaths {
@@ -36,6 +37,7 @@ function App() {
     }
   }, [data, loading, error,metric]);
 
+  // check if we are awaiting data from the api
   if (loading) return (
     <div className='main'>
       <h2>Loading Covid Statistics</h2>
@@ -43,6 +45,7 @@ function App() {
       <div id="loading_bar"></div>
     </div>);
 
+  // effor fetching data
   if (error) return (
     <div className='main'>
       <h2>Something went wrong. Try Later!</h2>
